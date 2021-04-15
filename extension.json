@@ -3,7 +3,7 @@
     "name": "pip requirements",
     "organization": "cjwcommuny",
     "description": "Syntax highlight for pip requirements file",
-    "version": "1.0",
+    "version": "1.1",
     "repository": "https://github.com/cjwcommuny/PipRequirements.novaextension",
     "bugs": "https://github.com/cjwcommuny/PipRequirements.novaextension/issues",
     "categories": ["languages"]

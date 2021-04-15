@@ -1,4 +1,4 @@
 This extension provides syntax highlighting  for **pip requirements files**.
 
-![](Images/screenshot.png)
+![](https://github.com/cjwcommuny/PipRequirements.novaextension/raw/master/Images/screenshot.png)
 
