@@ -1,0 +1,8 @@
+{
+    "identifier": "cjwcommuny.PipRequirements",
+    "name": "pip requirements",
+    "organization": "cjwcommuny",
+    "description": "Syntax highlight for pip requirements file",
+    "version": "1.0",
+    "categories": ["languages"]
+}

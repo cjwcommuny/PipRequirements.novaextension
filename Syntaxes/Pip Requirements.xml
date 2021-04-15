@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="pip-requirements">
+    <meta>
+        <name>pip requirements</name>
+        <type>structured</type>
+        <preferred-file-extension>pip-requirements</preferred-file-extension>
+    </meta>
+    
+    <detectors>
+        <combo priority="0.7">
+            <extension>txt</extension>
+            <filename>requirements</filename>
+        </combo>
+    </detectors>
+    
+    <indentation>
+        <increase>
+            <expression>^\s*&lt;(([^!/?]|%)(?!.+?([/%]&gt;|&lt;/.+?&gt;))|[%!]--\s*$)</expression>
+        </increase>
+        <decrease>
+            <expression>^\s*(&lt;/[^&gt;]+&gt;|--&gt;|--%&gt;)</expression>
+        </decrease>
+    </indentation>
+    
+    <comments>
+        <single>
+            <expression>\#</expression>
+        </single>
+    </comments>
+    
+    <brackets>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&lt;" close="&gt;" />
+    </brackets>
+
+    <surrounding-pairs>
+        <pair open="&lt;" close="&gt;" />
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&apos;" close="&apos;" />
+        <pair open="&quot;" close="&quot;" />
+        <pair open="`" close="`" />
+    </surrounding-pairs>
+    
+    <scopes>
+        <include syntax="self" collection="comments" />
+        <include syntax="self" collection="values" />
+    </scopes>
+    
+    <collections>
+        <!-- Comments -->
+        <collection name="comments">
+            <scope name="pip-requirements.comment.single">
+                <expression>\#(\s.*)$</expression>
+                <capture number="1" name="pip-requirements.comment.content" />
+            </scope>
+            <scope name="pip-requirements.comment.single">
+                <expression>^\#(.*)$</expression>
+            </scope>
+        </collection>
+        
+        <!-- Values -->
+        <collection name="values">
+            <scope name="pip-requirements.value.number">
+                <expression>\b[0-9]+(?:\.[0-9]+)*\b</expression>
+            </scope>
+            <scope name="pip-requirements.string">
+                <starts-with>
+                    <expression>&quot;</expression>
+                </starts-with>
+                <ends-with>
+                    <expression>&quot;</expression>
+                </ends-with>
+            </scope>
+            <scope name="pip-requirements.string">
+                <starts-with>
+                    <expression>&apos;</expression>
+                </starts-with>
+                <ends-with>
+                    <expression>&apos;</expression>
+                </ends-with>
+            </scope>
+        </collection>
+    </collections>
+</syntax>
