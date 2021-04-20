@@ -1,3 +1,7 @@
+## Version 1.1.1
+
+Fix a bug
+
 ## Version 1.1
 
 Add a screenshot in README

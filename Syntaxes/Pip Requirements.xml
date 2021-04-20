@@ -7,10 +7,7 @@
     </meta>
     
     <detectors>
-        <combo priority="0.7">
-            <extension>txt</extension>
-            <filename>requirements</filename>
-        </combo>
+        <filename priority="1.0">requirements.txt</filename>
     </detectors>
     
     <indentation>
